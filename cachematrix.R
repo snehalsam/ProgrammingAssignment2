@@ -26,7 +26,7 @@ cacheSolve <- function(x, ...) {
   
   if (checkorg == TRUE) {
     
-    if (!is.na(checkinv)) {
+    if (!anyNA(checkinv)) {
       message("getting cached data")
       return(checkinv)
     }
@@ -34,7 +34,7 @@ cacheSolve <- function(x, ...) {
   
   
   temp_inverse <- solve(x)
-  checkmatrix$inverse<- temp_inverse
+  checkmatrix$inverse <<- temp_inverse
   return(temp_inverse)
   
 }
